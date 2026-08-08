@@ -29,13 +29,17 @@ async def scrape(session, url):
 
     soup = BeautifulSoup(html, "html.parser")
 
+    specs = soup.find_all("div", class_="col-md-12 col-sm-12 col-xs-12")
     return soup.get_text(" ", strip=True)
+
+
 
 
 async def main():
     urls = [
-        "https://wb.gov.in/government-schemes-details-agriculture-infrastructure-fund.aspx",
-        "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx"
+        "https://wb.gov.in/government-schemes-details-aadhaar-enrolment-and-seeding.aspx",
+        # "https://assam.gov.in/scheme-page/526"
+        "https://wb.gov.in/government-schemes-details-agriculture-infrastructure-fund.aspx"
     ]
 
     async with aiohttp.ClientSession() as session:
