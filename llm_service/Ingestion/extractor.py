@@ -6,7 +6,7 @@ from langchain.messages import HumanMessage, AIMessage, SystemMessage
 
 
 load_dotenv()
-#api_key = "AIzaSyDh75MTwFmjuufIO0p32wGyRD5qC7b6XhM"
+
 
 
 api_key = os.getenv("GEMINI_API_KEY")
